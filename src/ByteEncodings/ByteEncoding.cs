@@ -4,6 +4,9 @@
     using System.Linq;
     using JetBrains.Annotations;
 
+    /// <summary>
+    /// High-level bytes encoding and decoding class. Provides handy methods for ints, longs and guids
+    /// </summary>
     public class ByteEncoding
     {
         private readonly IAlphabet _alphabet;

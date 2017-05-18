@@ -11,6 +11,34 @@
     /// </summary>
     public class Inspirations
     {
+
+        /// <summary>
+        /// Let's start with practical use case. Compression of guids to take less space
+        /// </summary>
+        [Fact]
+        public void Compressing_identifiers()
+        {
+            var id = Guid.Parse("9bd9c926-a2b6-4451-912e-d3b5ba690000");
+
+            // spell it over the phone
+            var humanEncoder = ByteEncoding.Base32;
+            Assert.Equal("GJST5N2WCNUIUI2FTONV3UB", humanEncoder.GetString(id));
+            Assert.Equal(id, humanEncoder.GetGuid("GJST5N2WCNUIUI2FTONV3UB"));
+
+            // use in url
+            var urlSafeEncoder = ByteEncoding.Base64Safe;
+            Assert.Equal("mkc2baroRRUkuMdt6mG", urlSafeEncoder.GetString(id));
+            Assert.Equal(id, urlSafeEncoder.GetGuid("mkc2baroRRUkuMdt6mG"));
+
+            // ogly full-ascii option - but not so much shorter
+            var oglyEncoder = ByteEncoding.Ascii;
+            Assert.Equal(@"I\)a]d&x/U{lpi^^m", oglyEncoder.GetString(id));
+            Assert.Equal(id, oglyEncoder.GetGuid(@"I\)a]d&x/U{lpi^^m"));
+
+            // for better compression your guids needs to be special ;)
+            Assert.Equal("", humanEncoder.GetString(Guid.Empty));
+        }
+
         /// <summary>
         /// Have you ever thought how integer is represented on disk. In this case most significant bit
         /// (sign bit) is last, so numbers which have '1' on the right side are negative.
@@ -128,33 +156,6 @@
 
             // Are you still with me here?
             Assert.Equal(knownValue, mappedPwd);
-        }
-
-        /// <summary>
-        /// Too much fun? How about a practical use case. Compress a guids to take less space
-        /// </summary>
-        [Fact]
-        public void Compressing_identifiers()
-        {
-            var id = Guid.Parse("9bd9c926-a2b6-4451-912e-d3b5ba690000");
-
-            // spell it over the phone
-            var humanEncoder = new ByteEncoding(Alphabet.Base32Alphabet);
-            Assert.Equal("GJST5N2WCNUIUI2FTONV3UB", humanEncoder.GetString(id));
-            Assert.Equal(id, humanEncoder.GetGuid("GJST5N2WCNUIUI2FTONV3UB"));
-
-            // use in url
-            var urlSafeEncoder = new ByteEncoding(Alphabet.Base64SafeAlphabet);
-            Assert.Equal("mkc2baroRRUkuMdt6mG", urlSafeEncoder.GetString(id));
-            Assert.Equal(id, urlSafeEncoder.GetGuid("mkc2baroRRUkuMdt6mG"));
-
-            // ogly full-ascii option - but not so much shorter
-            var oglyEncoder = new ByteEncoding(Alphabet.Base95Alphabet);
-            Assert.Equal(@"I\)a]d&x/U{lpi^^m", oglyEncoder.GetString(id));
-            Assert.Equal(id, oglyEncoder.GetGuid(@"I\)a]d&x/U{lpi^^m"));
-
-            // for better compression your guids needs to be special ;)
-            Assert.Equal("", humanEncoder.GetString(Guid.Empty));
         }
     }
 }

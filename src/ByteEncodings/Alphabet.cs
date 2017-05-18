@@ -84,10 +84,21 @@
             : this(digits.Substring(0, radix))
         { }
 
+        /// <summary>
+        /// Available alphabet - digits in number representation
+        /// </summary>
         public string Digits { get; }
 
+        /// <summary>
+        /// The radix (convertion base)
+        /// </summary>
         public int Radix { get; }
 
+        /// <summary>
+        /// Converts <see cref="bytes"/> expressed as <see cref="BigInteger"/> to its representation in base <see cref="Radix"/>
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns>Representation of a <see cref="BigInteger"/> in base <see cref="Radix"/></returns>
         public string GetString(BigInteger number)
         {
             return JoinDigits(
@@ -96,6 +107,11 @@
                 Digits);
         }
 
+        /// <summary>
+        /// Converts <see cref="bytes"/> expressed as <see cref="BigInteger"/> to its representation in base <see cref="Radix"/>
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns>Representation of a <see cref="BigInteger"/> in base <see cref="Radix"/></returns>
         public string GetString(IEnumerable<byte> bytes)
         {
             bytes = bytes?.ToArray() 
@@ -107,6 +123,11 @@
                 Digits);
         }
 
+        /// <summary>
+        /// Converts <see cref="encoding"/> representation in base <see cref="Radix"/> to <see cref="byte"/>s
+        /// </summary>
+        /// <param name="encoding">Number representation in base <see cref="Radix"/></param>
+        /// <returns><see cref="BigInteger"/> value in <see cref="byte"/>s</returns>
         public IEnumerable<byte> GetBytes(string encoding)
         {
             if (encoding == null)

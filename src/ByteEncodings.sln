@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteEncodings", "ByteEncodings\ByteEncodings.csproj", "{65D17A7A-8D01-4046-B678-9DAD66134BB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteEncodings", "ByteEncodings\ByteEncodings.csproj", "{65D17A7A-8D01-4046-B678-9DAD66134BB0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteEncodings.Test", "ByteEncodings.Test\ByteEncodings.Test.csproj", "{EB875664-3DF6-4BDE-957E-7B99810E46AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ByteEncodings.Test", "ByteEncodings.Test\ByteEncodings.Test.csproj", "{EB875664-3DF6-4BDE-957E-7B99810E46AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution Files", "{B1888E05-9FC4-4C44-BB8F-03FEADF7FF13}"
+	ProjectSection(SolutionItems) = preProject
+		..\.gitignore = ..\.gitignore
+		..\ReadMe.md = ..\ReadMe.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

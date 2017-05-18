@@ -40,8 +40,19 @@
         IEnumerable<byte> FromBaseN([NotNull]IEnumerable<int> digits, int radix);
     }
 
+    /// <summary>
+    /// Provides methods to express a number in any integer base
+    /// </summary>
     public class BaseConverter : IBaseConverter
     {
+        /// <summary>
+        /// Converts unsigned little-endian number in <see cref="bytes" /> to its representation in base <see cref="radix"/>
+        /// </summary>
+        /// <param name="bytes"> The little-endian unsigned value.</param>
+        /// <param name="radix"> The base radix.</param>
+        /// <returns>
+        /// The collection of digits in base <see cref="radix"/> from least to most significant.
+        /// </returns>
         public IEnumerable<int> ToBaseN(IEnumerable<byte> bytes, int radix)
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
@@ -55,6 +66,14 @@
                 radix);
         }
 
+        /// <summary>
+        /// Converts nonegative big integer <see cref="number"/> to its representation in base <see cref="radix"/>
+        /// </summary>
+        /// <param name="number"> The nonegative value.</param>
+        /// <param name="radix"> The base radix.</param>
+        /// <returns>
+        /// The collection of digits in base <see cref="radix"/> from least to most significant.
+        /// </returns>
         public IEnumerable<int> ToBaseN(BigInteger number, int radix)
         {
             return GetDigits(BigInteger.Abs(number), radix)
@@ -62,6 +81,12 @@
                 .AsEnumerable();
         }
 
+        /// <summary>
+        /// Converts little-endian digits of base <see cref="radix"/> to little-endian byte array
+        /// </summary>
+        /// <param name="digits">The little-endian digits collection</param>
+        /// <param name="radix">The base in which number is expressed</param>
+        /// <returns>Little-endian byte array representation of BigInteger.</returns>
         public IEnumerable<byte> FromBaseN(IEnumerable<int> digits, int radix)
         {
             if (digits == null) throw new ArgumentNullException(nameof(digits));
