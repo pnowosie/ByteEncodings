@@ -18,11 +18,7 @@ Full source code (for review on GitHub) is well documented and tested. For inspi
     <FileVersion>1.2.1.0</FileVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/pnowosie/ByteEncodings/7d69f6b2/icons/package_icon.png</PackageIconUrl>
     <PackageTags>Encoding Hex Base32 Base58 Base64 Base73 Base85 Base95</PackageTags>
-    <PackageReleaseNotes>Removed unneccesary dependency of ValueTuples</PackageReleaseNotes>
+    <PackageReleaseNotes>Removed unneccesary dependencies of ValueTuples and JetBrains</PackageReleaseNotes>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="JetBrains.Annotations" Version="10.4.0" />
-  </ItemGroup>
 
 </Project>
