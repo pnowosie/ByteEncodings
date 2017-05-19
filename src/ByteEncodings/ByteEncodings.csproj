@@ -1,21 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <TargetFrameworks>netcoreapp1.1;net461</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Authors>Pawel Nowosielski</Authors>
     <Company>Edopi Software</Company>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
     <Copyright>© Edopi Software 2017</Copyright>
-    <Description>Encoding bytes to multiple text format, e.g. Bin, Hex, Base32, Base64, Base95 (and more). Represent an integer in any base.
+    <Description>Encoding bytes to multiple text format, e.g. Bin, Hex, Base32, Base64, Base95 (and more). Represent an integer in any base. Supports .NET 4.6.1 and Standard 1.1 (Core)
 
 Full source code (for review on GitHub) is well documented and tested. For inspirations of possible usage please review Test/Inspiration.cs file. If you like this project, please give it a star on GitHub ;)</Description>
     <PackageProjectUrl>https://github.com/pnowosie/ByteEncodings</PackageProjectUrl>
     <RepositoryUrl>https://github.com/pnowosie/ByteEncodings</RepositoryUrl>
-    <Version>1.1.0.0</Version>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0.0</FileVersion>
+    <Version>1.2.0.0</Version>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0.0</FileVersion>
+    <PackageIconUrl>https://raw.githubusercontent.com/pnowosie/ByteEncodings/7d69f6b2/icons/package_icon.png</PackageIconUrl>
+    <PackageTags>Encoding Hex Base32 Base58 Base64 Base73 Base85 Base95</PackageTags>
+    <PackageReleaseNotes>Adding support for full NET 4.6.1</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
