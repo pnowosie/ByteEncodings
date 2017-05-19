@@ -13,17 +13,16 @@
 Full source code (for review on GitHub) is well documented and tested. For inspirations of possible usage please review Test/Inspiration.cs file. If you like this project, please give it a star on GitHub ;)</Description>
     <PackageProjectUrl>https://github.com/pnowosie/ByteEncodings</PackageProjectUrl>
     <RepositoryUrl>https://github.com/pnowosie/ByteEncodings</RepositoryUrl>
-    <Version>1.2.0.0</Version>
-    <AssemblyVersion>1.2.0.0</AssemblyVersion>
-    <FileVersion>1.2.0.0</FileVersion>
+    <Version>1.2.1.0</Version>
+    <AssemblyVersion>1.2.1.0</AssemblyVersion>
+    <FileVersion>1.2.1.0</FileVersion>
     <PackageIconUrl>https://raw.githubusercontent.com/pnowosie/ByteEncodings/7d69f6b2/icons/package_icon.png</PackageIconUrl>
     <PackageTags>Encoding Hex Base32 Base58 Base64 Base73 Base85 Base95</PackageTags>
-    <PackageReleaseNotes>Adding support for full NET 4.6.1</PackageReleaseNotes>
+    <PackageReleaseNotes>Removed unneccesary dependency of ValueTuples</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="10.4.0" />
-    <PackageReference Include="System.ValueTuple" Version="4.4.0-preview1-25305-02" />
   </ItemGroup>
 
 </Project>

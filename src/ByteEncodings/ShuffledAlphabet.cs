@@ -22,7 +22,7 @@
             for (int i = tab.Length - 1; i >= 1; i--)
             {
                 int j = r.Next(0, i+1);
-                (tab[i], tab[j]) = (tab[j], tab[i]);    // C# 7 - FTW!
+                var tmp = tab[i]; tab[i] = tab[j]; tab[j] = tmp;
             }
 
             return Encoding.ASCII.GetString(tab);
