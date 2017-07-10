@@ -157,5 +157,21 @@
             // Are you still with me here?
             Assert.Equal(knownValue, mappedPwd);
         }
+
+        [Fact]
+        public void We_can_make_Ceasar_cipher_absurdally_inefficient()
+        {
+            // Caesar cipher: ABCD -> XYZA
+            var plaintext = "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG";
+            var expected = "QEBNRFZHYOLTKCLUGRJMPLSBOQEBIXWVALD";
+
+            var plainAlphabet = new Alphabet("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+            var cipherAlphabet = new Alphabet("XYZABCDEFGHIJKLMNOPQRSTUVW");
+
+            var bytes = plainAlphabet.GetBytes(plaintext);
+            var ciphertext = cipherAlphabet.GetString(bytes);
+            Assert.Equal(expected, ciphertext);
+            // we could check that we can decode back to plaintext, but it's obvious now - isn't it? 
+        }
     }
 }
